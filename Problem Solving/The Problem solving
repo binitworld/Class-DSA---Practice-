@@ -1,0 +1,55 @@
+# Outline
+
+>The problem solving aspect
+
+→Ques 20 Problem solving steps
+
+→ Problem definition phase
+
+→ Getting started on problem
+
+→ The use of specific examples
+
+# Similarities among problems
+
+Working backward from solution
+
+> General problem solving strategies
+
+Finite no.steps
+ 
+ >Deffensitives 
+ >Effectiveness 
+ >to done exactly 
+ >Deploying through FLow Chart 
+
+ 
+# Ideas Should BE IMPLEMENTED
+
+Use Pe-sudo Code 
+for the implementation 
+keywords are  Input, COMPUTE, PRINT , INCREMENT, DEcrement, ...........
+>first to analyze the problem then Start solution
+
+
+# Divide and Conquer Method  
+Binary Doubling
+>> double every previous digit and add it to the current digit of the binary number, starting from the left-most digit and moving towards the right.
+
+
+# Dynamic Programming:
+3. Dynamic Programming
+
+>Another general strategy for problem-solving which is useful when we can build-up the solution as a sequence of the intermediate steps
+
+The idea here is that a good or optimal solution to a problem can be built-up from good or optimal solutions of the sub-problems
+
+>The problem should be able to be divided into smaller overlapping sub- 27 problem
+
+>An optimum-solution can be achieved by using an optimum solution of smaller sub-problems
+
+>Dynamic algorithms use Memoization ie. remembering the result of overlapping sub-problems.
+6. 
+
+
+
