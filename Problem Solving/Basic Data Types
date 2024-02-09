@@ -1,0 +1,287 @@
+Why do we use Basic Data Types in C?
+All the names – primary, fundamental, and basic data types, mean the very same thing. Let us suppose that we need to store the details of students, such as their candidate names, IDs, blood groups, average scores, and total fees. Here, we will use the basic data types for storing this available data. Here is how we can do it:
+
+char candidate[25];
+
+int id;
+
+char blood;
+
+float scores[5];
+
+double fees;
+
+
+Types of Basic Data Types in C
+The basic data types are of four major types – both in unsigned as well as signed forms. These are:
+
+Char
+Double
+Float
+Int
+The size of memory required for all of these data types can easily change on the basis of what operating system we are using (64-bit or 32-bit). The table below shows all the data types that we commonly use in the C programming language, along with their value range and storage size. We will look into the details according to a 32-bit type of architecture.
+
+Data Type	Value Range	Storage Size
+Unsigned int	0 to 65,535	2 bytes
+# Int (or can be signed int)	-32,768 to 32,767	2 bytes
+# Long int (or it can be signed long int)	-2,147,483,648 to 2,147,483,647	4 bytes
+# Short int (or can be signed short int)	-32,768 to 32,767	2 bytes
+# Unsigned long int	0 to 4,294,967,295	4 bytes
+# Double	2.3E-308 to 1.7E+308 (about 15 decimal places)	8 bytes
+# Long double	3.4E-4932 to 1.1E+4932 (about 19 decimal places)	10 bytes
+# Float	1.2E-38 to 3.4E+38 (about 6 decimal places)	4 bytes
+# Char (or can be signed char)	-128 to 127	1 byte
+# Unsigned char	0 to 255	1 byte
+Now, let us take a look at all the basic data types in detail.
+
+1. The Integer Data Type
+The variables that are of integer type are capable of storing negative, zero, as well as positive values without the decimals. The C language represents the integer data type by the keyword int. It can be unsigned as well as a signed value. But in case it is unsigned, then the value assigned to the integer variable will be considered positive by default.
+
+This integer data type has further sub-types named the long int and short int. This can be signed long int, signed short int, unsigned long int, and unsigned short int. Here, int takes up about 2 bytes or 4 bytes of the storage space and short data type would take up about 2 bytes. The long data type would take up about 8 bytes and 4 bytes of space in a 64-bit type and 32-bit type operating system respectively.
+
+Whenever someone tries to assign some decimal values to the int variable, then the value available after the decimal will get truncated, and a whole number will be left. This whole number will get assigned to the variable. Let us understand this concept better, by using an example:
+
+#include
+
+int main() {
+
+int x=11252486;
+
+short int y=10000;
+
+long long num11=51454456154585454;
+
+long num22=499962313469;
+
+printf(“x is %d \n y is %hd \n num11 is %lld \n num22 is %ld \n”,x,y,num11,num22);
+
+return 0;
+
+}
+
+The output generated out of the program mentioned above will be:
+
+x is 11252486
+
+y is 10000
+
+num11 is 51454456154585454
+
+num22 is 1746107133
+
+When performing this arithmetic operation, we may get a decimal value as a result of the program. In any such case, the variable would discard the numbers after the decimal point, and accept the whole number only. Also, for the short int variables, the result will be displayed with an incorrect value if the number we use is bigger than 1000. Always keep that in mind when assigning a value to the short int variable.
+
+Characteristics of the Integer Data Type:
+We use the int keyword for referring to the integer data type in a C program.
+The int data type would allow a variable in a program to store various numeric values.
+The storage size here would be either 2 bytes, 4 bytes, or even 8 bytes.
+The size would vary a lot on the basis of the processor that is used for running the program. For instance, when using the 16-bit type of processor, the int data type will be allocated with about 16 bits or 2 bytes of memory.
+Similarly, the int data type will be allocated with about 32 bits or 4 bytes in the case of a 32-bit type of processor, and it will be allocated with 64 bits or 8 bytes of memory for a 64-bit type of processor.
+The int with 4 bytes of memory is capable of storing values ranging from -2,147,483,648 to +2,147,483,647.
+The int with 2 bytes of memory is capable of storing values ranging from -32,768 to +32,767.
+In case we want to use an integer value that is crossing the maximum limit for the int, we can then use the long int or even long long int. These data types have a very high limit for the values that can be stored.
+Important Points to Remember:
+The int data types do not allow us to store the decimal values.
+Whenever we use the int data type for storing the decimal values, the digits present after the decimals will get truncated. We will only get a whole number as a result.
+In case we don’t want this to happen and would like to store the exact decimal value in the program’s variable, then we must use the float data type instead.
+2. The Floating Point Data Types
+We use the floating-point data types for storing the decimal values into a variable in a C program. It is majorly of two different types:
+
+Double
+Float
+2.1 The Float Data Type
+The float variables are used for storing decimal values, and these are capable of storing decimal values that are present up to 6 digits after the digit’s decimal place. The float variable’s storage size is about 4 bytes. But its size can vary a lot according to the processors that we use – just like the int data type. The float values in the C language are represented by a format specifier ‘%f’. The value that contains the integer value will be printed as well, in the floating type along with redundant zeroes. Let us look at the example given below to understand this better:
+
+#include
+
+int main() {
+
+float num=67;
+
+float sum=9664.35;
+
+float average=(sum/num);
+
+printf(“The average of numbers is equal to %f \n”, average);
+
+printf(“The value of the num is equal to %f \n”,num);
+
+printf(“The value of the num presented as the integer value is equal to %d \n”,num);
+
+}
+
+The program mentioned here will generate an output as follows:
+
+The average is equal to 144.244019
+
+The value of the num is equal to 67.000000
+
+The value of the num presented as the integer value is equal to 0
+
+In case we assign a float variable with an integer value, then we will always get the result to be some float value that has zeros after the decimal place itself. As already mentioned above, the format specifier ‘%f’ represents all the float values in a C program. However, if we try printing a float value with the specifier ‘%d’, then the output of the program mentioned above will not be equal to 67. We will get a garbage value in the output screen instead.
+
+Characteristics of the Float Data Type:
+The float data type is basically used for storing all the decimal values in a program, but it has some storage limits.
+The float has a storage size of about 4 bytes. However, it varies a lot on the basis of the processor present in the CPU in use in the form of int type.
+Using the float data type, we can easily store values that have up to 6 digits after the decimal point. For instance, one can store the value 12.345678 in a variable if we use the float data type.
+2.2 The Double Data Type
+This data type is very similar to that of the float data type. The major difference here is that the double can contain up to 10 digit values after the decimal place, unlike float that supports only upto 6 digits after the decimal place. The double data type is represented by the ‘double’ keyword, and we mainly use it in the case of scientific programs because we require precision here.
+
+Look at the example mentioned below. Here, we have used both – double and float variables. In the output, the double variable will print the exact assigned value, i.e., ‘349999999.454’. The float variable, on the other hand, will ultimately mess up with the assigned number. It will print a rounded-off value in the output. Let us take a look at the program and understand how both of these generate output accordingly:
+
+#include
+
+int main()
+
+{
+
+float marks=349999999.454;
+
+double score=349999999.454;
+
+printf(“The marks obtained by the student is %f \n”,marks);
+
+printf(“The actual score of the student’s exams is %lf”,mean);
+
+return 0;
+
+}
+
+Here is the output that we will get after running the program mentioned above:
+
+The marks obtained by the student is 350000000.000000
+
+The actual score of the student’s exams is 349999999.454000
+
+Characteristics of the Double Data Type:
+This data type is similar to that of the float data type, but it is capable of storing values with more than 6 digits after the decimal point.
+However, the double data type also has some limits of 10 digits. It means that one can use the double type for storing those values that have a maximum of 10 digits after the decimal point.
+For instance, you can store the value 90.8765432001 in a variable if we use the double data type.
+The double data type also has a limited range. It ranges from 1E–37 to 1E+37.
+3. The Char Data Type
+We use the char data type for storing the single character values – it includes numerical values as well. Thus, if we create an array of the char data type (character type), it will ultimately become a string. This string will be capable of storing values like subject, names, etc.
+
+Let us look at an example where we create an array of various characters in the C programming language:
+
+#include
+
+int main()
+
+{
+
+char office=’X’;
+
+// for storing a string of various characters in the C programming, we will use an array of all the characters here
+
+char employee[30]=”Anne”;
+
+printf(“The people are from office %c \n”,office);
+
+printf(“The name of the employee is %s”,employee);
+
+return 0;
+
+}
+
+When we use this program in the C language, we will get the output as follows:
+
+The people are from office X
+
+The name of the employee is Anne
+
+Note that the format specifier that we use here for a single character is ‘%c’. On the other hand, if we try to represent a string or array of all the characters, the format specifier ‘%s’ will represent it in the program.
+
+Characteristics of the Char Data Type:
+The character data type allows us to store just a single character in a variable in the C program.
+The storage size of the char data type is about 1 byte.
+The character data type is represented in a program using the ‘char’ data type.
+For instance, we can store ‘X’ with the use of the char data type. But we cannot store more than one value here, because the char data type won’t support it.
+A string of various characters will be created if we try to create an array of the char data types in any program. This string will then store every value individually.
+
+Practice Problems on Basic Data Types in C
+1. What would be the output obtained out of the program mentioned below:
+
+{
+
+char school=’B’;
+
+char student[30]=”Drew”;
+
+printf(“The students are from school %c \n”,school);
+
+printf(“The name of the student is %s”,student);
+
+return 0;
+
+}
+
+A. The students are from school
+
+The name of the student is Drew
+
+B. The students are from school
+
+The name of the student is Drew B
+
+C. The students are from school B
+
+The name of the student is Drew B
+
+D. The students are from school B
+
+The name of the student is Drew
+
+Answer – D. The students are from school B
+
+The name of the student is Drew
+
+2. What would be the output obtained out of the program mentioned below?
+
+#include
+
+int main()
+
+{
+
+float temperature=869999999.596;
+
+double value=869999999.596;
+
+printf(“The temperature captured at the ocean is %f \n”,temperature);
+
+printf(“The actual temperature on record is %lf”,value);
+
+return 0;
+
+}
+
+A. The temperature captured at the ocean is 870000000.000000
+
+The actual temperature on record is 869999999.596000
+
+B. The temperature captured at the ocean is 869999999.596000
+
+The actual temperature on record is 870000000.000000
+
+C. The temperature captured at the ocean is 870000000.000000
+
+The actual temperature on record is 869999999.000000
+
+D. The temperature captured at the ocean is 869999999.000000
+
+The actual temperature on record is 870000000.000000
+
+Answer – A. The temperature captured at the ocean is 870000000.000000
+
+The actual temperature on record is 869999999.596000
+
+
+Frequently Asked Questions
+Q1
+Does the integer data type allow the storage of both positive and negative values in a program? Does it have a separate syntax for both?
+The variables that are of integer data type are capable of storing negative, zero, as well as positive values without the decimals – just like its name suggests. The C language represents the integer data type by the keyword int. Also, it can be unsigned as well as a signed value. But in case it is unsigned, then the value assigned to the integer variable will be considered positive by default. But both the values are represented with the same syntax.
+
+Q2
+What is the format specifier for all the basic data types in C programming?
+The float values in the C language are represented by a format specifier ‘%f’. However, if we try printing a float value with the specifier ‘%d’, then the output of the program will generate a garbage value in the output screen instead. The format specifier that we use for a single character is ‘%c’. On the other hand, if we try to represent a string or array of all the characters, the format specifier ‘%s’ will represent it in the program.
+The signed integer is simply specified by ‘%d’, unsigned integer by ‘%i’, signed short integer by ‘%hi’, and unsigned short integer by ‘%hu’. Also, the format specifiers ‘%l’, ‘%ld’, and ‘%li’ represent the long integer.
