@@ -1,0 +1,9 @@
+# Dangling Pointers :
+
+
+>void  Pointers  when you use malloc functions 
+>Learnog Point of mallaoc  functions: locate a memory type of a void 
+>wild Pointers  A pointer that has not been initiallised to a null addres  like inialtialized as *p whiout allocation it return the 
+
+# Register Integer 
+>memory Leak == 
