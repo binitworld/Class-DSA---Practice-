@@ -1,0 +1,18 @@
+43) What is 3NF?
+3NF stands for Third Normal Form. A database is called in 3NF if it satisfies the following conditions:
+
+It is in second normal form.
+There is no transitive functional dependency.
+For example: X->Z
+Where:
+X->Y
+Y does not -> X
+Y->Z so, X->Z
+
+44) What is BCNF?
+BCMF stands for Boyce-Codd Normal Form. It is an advanced version of 3NF, so it is also referred to as 3.5NF. BCNF is stricter than 3NF.
+
+A table complies with BCNF if it satisfies the following conditions:
+
+It is in 3NF.
+For every functional dependency X->Y, X should be the super key of the table. It merely means that X cannot be a non-prime attribute if Y is a prime attribute.
